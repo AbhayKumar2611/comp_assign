@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime Video Mood Detector</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Initial Screen -->
+      <div id="initial-screen">
+        <div class="prime-logo">
+          <img
+            src="https://m.media-amazon.com/images/G/01/digital/video/web/Logo-min.png"
+            alt="Prime Video"
+          />
+        </div>
+        <div class="content">
+          <p>Smile, frown, or just stare,<br />We will read your face!</p>
+          <div class="camera-container">
+            <video id="video" autoplay playsinline></video>
+            <canvas id="canvas"></canvas>
+            <div class="face-frame"></div>
+            <div class="scan-line" id="scan-line"></div>
+          </div>
+          <button class="button" id="check-mood">CHECK MY MOOD</button>
+          <a href="#" class="no-camera" id="no-camera"
+            >No Pic? no problem! choose your mood</a
+          >
+        </div>
+      </div>
+
+      <!-- Mood Selection Screen -->
+      <div id="mood-selection-screen" class="mood-selection-screen">
+        <div class="prime-logo">
+          <img
+            src="https://m.media-amazon.com/images/G/01/digital/video/web/Logo-min.png"
+            alt="Prime Video"
+          />
+        </div>
+        <div class="content">
+          <p>How would you describe your mood?</p>
+          <button class="option-button" data-mood="Happy">Happy</button>
+          <button class="option-button" data-mood="Excited">Excited</button>
+          <button class="option-button" data-mood="Neutral">Neutral</button>
+          <button class="option-button" data-mood="Angry">Angry</button>
+          <button class="option-button" data-mood="Sad">Sad</button>
+          <button class="button" id="confirm-mood" disabled>
+            THIS IS MY MOOD
+          </button>
+        </div>
+      </div>
+
+      <!-- Result Screen -->
+      <div id="result-screen" class="result-screen">
+        <div class="prime-logo">
+          <img
+            src="https://m.media-amazon.com/images/G/01/digital/video/web/Logo-min.png"
+            alt="Prime Video"
+          />
+        </div>
+        <div class="content">
+          <p>
+            Hey! You're in a
+            <span id="detected-mood" class="mood-highlight">Happy</span>
+            mood<br />and we got stories to match!
+          </p>
+          <div class="movie-container">
+            <img id="movie-thumbnail" src="" alt="Movie Thumbnail" />
+            <h3 id="movie-name"></h3>
+          </div>
+          <button class="button" id="watch-now">WATCH NOW</button>
+          <button class="option-button" id="scan-again">SCAN AGAIN</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
